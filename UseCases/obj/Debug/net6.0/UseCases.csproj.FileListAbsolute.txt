@@ -1,0 +1,15 @@
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\bin\Debug\net6.0\UseCases.deps.json
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\bin\Debug\net6.0\UseCases.dll
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\bin\Debug\net6.0\UseCases.pdb
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.csproj.AssemblyReference.cache
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.AssemblyInfoInputs.cache
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.AssemblyInfo.cs
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.csproj.CoreCompileInputs.cache
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.csproj.CopyComplete
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.dll
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\refint\UseCases.dll
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\UseCases.pdb
+C:\Users\gdambra\source\repos\SortingAPI\UseCases\obj\Debug\net6.0\ref\UseCases.dll
