@@ -6,7 +6,6 @@ namespace UseCases
     public class GetContentUseCase : IGetContentUseCase
     {
         private readonly IGetContentService _getContentService;
-        //private readonly string fileName = $"data_sorted.txt";
 
         public GetContentUseCase(IGetContentService getContentService)
         {
@@ -14,21 +13,28 @@ namespace UseCases
         }
         public Task<string> GetLatestContentUseCase()
         {
-            try
-            {
-                var latestFile = _getContentService.GetContent();
+            string currentDirectory = Directory.GetCurrentDirectory();
 
-                if (latestFile == null)
+            DirectoryInfo directoryInfo = new DirectoryInfo(currentDirectory);
+
+            FileInfo[] textFiles = directoryInfo.GetFiles("*.txt");
+
+            FileInfo latestFile = textFiles.OrderByDescending(file => file.LastWriteTime).FirstOrDefault();
+
+            if (latestFile != null)
+            {
+                string latestFileName = latestFile.Name;
+
+                if (!File.Exists(latestFileName))
                 {
-                    throw new FileNotFoundException("No files found.");
+                    throw new FileNotFoundException("File not found.");
                 }
 
-                return Task.FromResult(latestFile);
+                return Task.FromResult(_getContentService.GetContent(latestFileName));
+
             }
-            catch (Exception ex)
-            {
-                throw new ApplicationException($"Error: {ex.Message}");
-            }
+
+            throw new FileNotFoundException("Latest file was not found");
         }
     }
 }

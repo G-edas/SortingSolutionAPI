@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BusinessLayer.Interfaces;
+﻿using BusinessLayer.Interfaces;
 
 namespace BusinessLayer.BusinessServices.SortingServices
 {

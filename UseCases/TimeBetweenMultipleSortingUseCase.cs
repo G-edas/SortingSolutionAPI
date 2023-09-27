@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UseCases.Interfaces;
@@ -32,7 +33,7 @@ namespace UseCases
         {
             var result = new Dictionary<string, long>();
 
-            int[] arrayToSort = GenerateRandomArray(10000);
+            int[] arrayToSort = GenerateRandomArray(Constants.sizeArray);
 
             var bubbleSortStopwatch = Stopwatch.StartNew();
 
@@ -41,7 +42,6 @@ namespace UseCases
             bubbleSortStopwatch.Stop();
 
             long bubbleSortElapsedNanoseconds = bubbleSortStopwatch.ElapsedMilliseconds;
-                //* 1000000000L / Stopwatch.Frequency;
 
             var quickSortStopwatch = Stopwatch.StartNew();
 
@@ -50,7 +50,6 @@ namespace UseCases
             quickSortStopwatch.Stop();
 
             long quickSortElapsedNanoseconds = quickSortStopwatch.ElapsedMilliseconds;
-                //* 1000000000L / Stopwatch.Frequency;
 
             result["BubbleSortOperationTime"] = bubbleSortElapsedNanoseconds;
             result["QuickSortOperationTime"] = quickSortElapsedNanoseconds;

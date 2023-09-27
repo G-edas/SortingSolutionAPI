@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BusinessLayer.BusinessServices;
+﻿using BusinessLayer.BusinessServices;
 using BusinessLayer.BusinessServices.SortingServices;
 using BusinessLayer.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +13,7 @@ public static class BusinessServicesExtensions
 
         services.AddScoped<ISortingServices, SortingServices>();
         services.AddScoped<IGetContentService, GetContentService>();
+        services.AddScoped<ISaveContentService, SaveContentService>();
 
         return services;
     }

@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Interfaces;
+﻿using BusinessLayer.BusinessServices.SortingServices;
+using BusinessLayer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using SortingAPI.Controllers.Base;
 using System.Collections;
@@ -26,7 +27,7 @@ namespace SortingAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> SortNumberArray(int[] intArray)
         {
-            return HandleResult(_sortingUseCase.SortingBubbleUseCase(intArray));
+            return HandleResult(_sortingUseCase.SortingUseCaseByAlgorithm(intArray));
         }
 
         [HttpGet("latestFile")]

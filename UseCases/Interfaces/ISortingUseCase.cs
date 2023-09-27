@@ -8,6 +8,6 @@ namespace UseCases.Interfaces
 {
     public interface ISortingUseCase
     {
-        int[] SortingBubbleUseCase(int[] arrayNums);
+        int[] SortingUseCaseByAlgorithm(int[] arrayNums);
     }
 }
