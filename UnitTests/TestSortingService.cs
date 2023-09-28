@@ -7,12 +7,12 @@ namespace UnitTests;
 public class TestSortingService
 {
     [SetUp]
-    public async Task Setup()
+    public void Setup()
     {
     }
 
     [Test]
-    public async Task QuickSortNumberAsync_ReturnsSortedArray()
+    public void QuickSortNumberAsync_ReturnsSortedArray()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7 };
@@ -21,7 +21,7 @@ public class TestSortingService
         var sortingServices = new SortingServices();
         var mockBusinessServices = new Mock<ISortingServices>();
 
-        // Mock the QuickSortNumberAsync method
+        // Mock
         mockBusinessServices.Setup(q => q.QuickSortNumberAsync(givenArray, 0, givenArray.Length - 1))
                            .Callback(() => sortingServices.QuickSortNumberAsync(givenArray, 0, givenArray.Length - 1));
 
@@ -30,11 +30,10 @@ public class TestSortingService
 
         // Assert
         CollectionAssert.AreEqual(expectedArray, givenArray);
-
     }
 
     [Test]
-    public async Task BubbleSortNumberAsync_ReturnsSortedArray()
+    public void BubbleSortNumberAsync_ReturnsSortedArray()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7 };
@@ -43,15 +42,14 @@ public class TestSortingService
         var sortingServices = new SortingServices();
         var mockBusinessServices = new Mock<ISortingServices>();
 
-        // Mock the BubbleSortNumberAsync method
+        // Mock
         mockBusinessServices.Setup(q => q.BubbleSortNumberAsync(givenArray))
                            .Callback(() => sortingServices.BubbleSortNumberAsync(givenArray));
 
         // Act
-        await mockBusinessServices.Object.BubbleSortNumberAsync(givenArray);
+        mockBusinessServices.Object.BubbleSortNumberAsync(givenArray);
 
         // Assert
         CollectionAssert.AreEqual(expectedArray, givenArray);
-
     }
 }

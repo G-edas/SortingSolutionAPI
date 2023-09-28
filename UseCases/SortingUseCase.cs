@@ -13,7 +13,7 @@ namespace UseCases
             _sortingServices = sortingServices;
             _saveContentService = saveContentService;
         }
-        public async Task<int[]> SortingUseCaseByAlgorithm(int[] arrayNums)
+        public async Task<int[]> SortingUseCaseByAlgorithm(int[]? arrayNums)
         {
             string fileName = $"sorted_array_{DateTime.Now:yyyyMMddHHmmss}.txt";
 

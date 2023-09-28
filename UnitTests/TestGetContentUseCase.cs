@@ -7,14 +7,13 @@ namespace UnitTests;
 public class TestGetContentUseCase
 {
     [SetUp]
-    public async Task Setup()
+    public void Setup()
     {
     }
 
     [Test]
-    public async Task TestGetContentUseCase_DoesntThrowError()
+    public void TestGetContentUseCase_DoesntThrowError()
     {
-
         // Arrange
         string testingDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
         string testingFileName = "Test1.txt";
@@ -28,7 +27,7 @@ public class TestGetContentUseCase
         var useCase = new GetContentUseCase(getContentServiceMock.Object);
 
         // Act
-        string result = await useCase.GetLatestContentUseCase();
+        string result = useCase.GetLatestContentUseCase().Result;
 
         // Assert
         CollectionAssert.AreEqual("This is for unit tests.", result);
@@ -36,9 +35,8 @@ public class TestGetContentUseCase
     }
 
     [Test]
-    public async Task TestGetContentUseCase_ThrowsErrorFileNotFound()
+    public void TestGetContentUseCase_ThrowsErrorFileNotFound()
     {
-
         // Arrange
         string testingDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
         string testingFileName = "FileNotFound.txt";
@@ -51,8 +49,7 @@ public class TestGetContentUseCase
         var useCase = new GetContentUseCase(getContentServiceMock.Object);
 
         // Act and Assert
-        Assert.ThrowsAsync<FileNotFoundException>(async () => await useCase.GetLatestContentUseCase());
-
+        Assert.ThrowsAsync<FileNotFoundException>(() =>  useCase.GetLatestContentUseCase());
     }
 
 }

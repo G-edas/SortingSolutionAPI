@@ -1,9 +1,5 @@
-﻿using BusinessLayer.BusinessServices.SortingServices;
-using BusinessLayer.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SortingAPI.Controllers.Base;
-using System.Collections;
-using System.Diagnostics;
 using UseCases.Interfaces;
 
 namespace SortingAPI.Controllers

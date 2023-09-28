@@ -1,5 +1,4 @@
-﻿using BusinessLayer.BusinessServices.SortingServices;
-using BusinessLayer.Interfaces;
+﻿using BusinessLayer.Interfaces;
 using Moq;
 using UseCases;
 
@@ -8,12 +7,12 @@ namespace UnitTests;
 public class TestSortingUseCase
 {
     [SetUp]
-    public async Task Setup()
+    public void Setup()
     {
     }
 
     [Test]
-    public async Task TestSortingUseCaseByAlgorithm_DoesntThrowErrorReturnsSortedArray()
+    public void TestSortingUseCaseByAlgorithm_DoesntThrowErrorReturnsSortedArray()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7};
@@ -37,11 +36,10 @@ public class TestSortingUseCase
 
         // Assert
         CollectionAssert.AreEqual(expectedArray, result);
-
     }
 
     [Test]
-    public async Task TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfEmpty()
+    public void TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfEmpty()
     {
         // Arrange
         var emptyArray = new int[0];
@@ -57,7 +55,7 @@ public class TestSortingUseCase
     }
 
     [Test]
-    public async Task TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfWrongInput()
+    public void TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfWrongInput()
     {
         // Arrange
         var wrongArray = new int[] { -1, 2, 3 };
@@ -70,37 +68,31 @@ public class TestSortingUseCase
 
         // Act and Assert
         Assert.ThrowsAsync<ArgumentException>(() => useCase.SortingUseCaseByAlgorithm(wrongArray));
-
     }
 
     [Test]
-    public async Task TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfNull()
+    public void TestSortingUseCaseByAlgorithm_ThrowArgumentExceptionBecauseOfNull()
     {
         // Arrange
-        int[] emptyArray = null;
+        int[]? emptyArray = null;
 
         //Mock
         var sortingServiceMock = new Mock<ISortingServices>();
         var writerToFileServiceMock = new Mock<ISaveContentService>();
 
-
         var useCase = new SortingUseCase(sortingServiceMock.Object, writerToFileServiceMock.Object);
 
         // Act and Assert
-
         Assert.ThrowsAsync<ArgumentException>(() => useCase.SortingUseCaseByAlgorithm(emptyArray));
-
     }
 
-
     [Test]
-    public async Task TestSortingUseCaseByAlgorithm_DoesntThrowWritesArrayToFile()
+    public void TestSortingUseCaseByAlgorithm_DoesntThrowWritesArrayToFile()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7 };
         int[] expectedArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         string fileName = $"sorted_array_{DateTime.Now:yyyyMMddHHmmss}.txt";
-
 
         //Mock
         var sortingServiceMock = new Mock<ISortingServices>();
@@ -115,15 +107,12 @@ public class TestSortingUseCase
         var useCase = new SortingUseCase(sortingServiceMock.Object, writerToFileServiceMock.Object);
 
         // Act
-        var result = await useCase.SortingUseCaseByAlgorithm(givenArray);
+        var result = useCase.SortingUseCaseByAlgorithm(givenArray);
 
         writerToFileServiceMock.Verify(
             writer => writer.WriterToFile(
                 fileName,
-                result),
+                result.Result),
             Times.Once);
-
     }
-
-
 }

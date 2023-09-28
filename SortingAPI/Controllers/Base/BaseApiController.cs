@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections;
 
 namespace SortingAPI.Controllers.Base;
 

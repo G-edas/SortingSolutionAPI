@@ -1,4 +1,3 @@
-
 using SortingAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

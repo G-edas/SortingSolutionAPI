@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.DependencyInjections;
-using Microsoft.OpenApi.Models;
+
 namespace SortingAPI.Extensions
 {
     public static class ApplicationServiceExtensions

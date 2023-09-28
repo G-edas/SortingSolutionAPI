@@ -1,6 +1,4 @@
 ﻿using BusinessLayer.Interfaces;
-using Microsoft.Extensions.Configuration;
-using System.IO;
 
 namespace BusinessLayer.BusinessServices
 {

@@ -1,5 +1,4 @@
-﻿
-namespace UseCases
+﻿namespace UseCases
 {
     static class Constants
     {
