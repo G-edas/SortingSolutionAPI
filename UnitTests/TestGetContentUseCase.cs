@@ -31,7 +31,6 @@ public class TestGetContentUseCase
 
         // Assert
         CollectionAssert.AreEqual("This is for unit tests.", result);
-
     }
 
     [Test]

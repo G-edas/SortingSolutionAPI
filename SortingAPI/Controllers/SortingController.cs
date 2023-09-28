@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SortingAPI.Controllers.Base;
+using System.ComponentModel.DataAnnotations;
 using UseCases.Interfaces;
 
 namespace SortingAPI.Controllers
@@ -21,9 +22,10 @@ namespace SortingAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SortNumberArray(int[] intArray)
+        //Cia kaip suprantu pagal salyga reikejo padaryti nuo 1 iki 10 kad priimtu tiktai?
+        public async Task<IActionResult> SortNumberArray([FromBody][CustomValidator(1,10)] int[] intArrays)
         {
-            return HandleResult(await _sortingUseCase.SortingUseCaseByAlgorithm(intArray));
+            return HandleResult(await _sortingUseCase.SortingUseCaseByAlgorithm(intArrays));
         }
 
         [HttpGet("latestFileContent")]

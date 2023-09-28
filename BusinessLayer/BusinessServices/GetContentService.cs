@@ -13,12 +13,9 @@ namespace BusinessLayer.BusinessServices
             if(latestFile != null) {
 
                 return Task.FromResult(File.ReadAllText(latestFile.Name));
-
             }
 
             throw new FileNotFoundException("Latest file was not found");
-
         }
-
     }
 }

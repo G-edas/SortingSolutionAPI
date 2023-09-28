@@ -19,7 +19,7 @@ namespace UseCases
 
             if (arrayNums == null || arrayNums.Any(x => x < 0) || arrayNums.Length == 0)
             {
-                throw new ArgumentException("Input array must contain natural numbers greater than 0 and cannot be empty.");
+                throw new ArgumentException("Input array must contain natural numbers greater than 0 and less than 10 and cannot be empty.");
             }
 
             var result =  await _sortingServices.QuickSortNumberAsync(arrayNums, 0, arrayNums.Length - 1);

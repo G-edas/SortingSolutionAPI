@@ -16,6 +16,7 @@ namespace UseCases
         {
             Random random = new Random();
             int[] array = new int[size];
+
             for (int i = 0; i < size; i++)
             {
                 array[i] = random.Next();
@@ -27,7 +28,7 @@ namespace UseCases
         {
             var result = new Dictionary<string, long>();
 
-            int[] arrayToSort = GenerateRandomArray(Constants.sizeArray);
+            var arrayToSort = GenerateRandomArray(Constants.sizeArray);
 
             var bubbleSortStopwatch = Stopwatch.StartNew();
 
@@ -35,7 +36,7 @@ namespace UseCases
 
             bubbleSortStopwatch.Stop();
 
-            long bubbleSortElapsedNanoseconds = bubbleSortStopwatch.ElapsedMilliseconds;
+            var bubbleSortElapsedNanoseconds = bubbleSortStopwatch.ElapsedMilliseconds;
 
             var quickSortStopwatch = Stopwatch.StartNew();
 
@@ -43,14 +44,13 @@ namespace UseCases
 
             quickSortStopwatch.Stop();
 
-            long quickSortElapsedNanoseconds = quickSortStopwatch.ElapsedMilliseconds;
+            var quickSortElapsedNanoseconds = quickSortStopwatch.ElapsedMilliseconds;
 
             result["BubbleSortOperationTime"] = bubbleSortElapsedNanoseconds;
             result["QuickSortOperationTime"] = quickSortElapsedNanoseconds;
             result["DifferenceBetweenOperations"] = bubbleSortElapsedNanoseconds - quickSortElapsedNanoseconds;
 
             return Task.FromResult(result);
-
         }
     }
 }

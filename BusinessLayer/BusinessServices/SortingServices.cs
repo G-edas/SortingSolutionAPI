@@ -2,10 +2,8 @@
 
 namespace BusinessLayer.BusinessServices.SortingServices
 {
-
     public class SortingServices : ISortingServices
     {
-
         public Task<int[]> BubbleSortNumberAsync(int[] intsArray)
         {
             int lenght = intsArray.Length;
@@ -28,8 +26,7 @@ namespace BusinessLayer.BusinessServices.SortingServices
 
         public Task<int[]> QuickSortNumberAsync(int[] intsArray, int leftIndex, int rightIndex)
         {
-            
-            
+
             int i = leftIndex;
             int j = rightIndex;
             int pivot = intsArray[leftIndex];

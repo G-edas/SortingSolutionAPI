@@ -13,7 +13,6 @@ namespace UseCases
         }
         public async Task<string> GetLatestContentUseCase()
         {
-
             var result = await _getContentService.GetContent();
 
             if (result == null)
@@ -22,7 +21,6 @@ namespace UseCases
             }
 
             return result;
-
         }
     }
 }
