@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-09-27_19-22-41" tag="">
+  <assembly name="BusinessLayer">
+    <class name="BusinessLayer.BusinessServices.GetContentService" coveredlines="0" coverablelines="3" totallines="14" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="BusinessLayer.BusinessServices.SaveContentService" coveredlines="0" coverablelines="7" totallines="18" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="BusinessLayer.BusinessServices.SortingServices.SortingServices" coveredlines="45" coverablelines="45" totallines="70" coveredbranches="18" totalbranches="18" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="BusinessLayer.DependencyInjections.BusinessServicesExtensions" coveredlines="0" coverablelines="6" totallines="20" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+  </assembly>
+  <assembly name="UseCases">
+    <class name="BusinessLayer.DependencyInjections.UseCasesExtensions" coveredlines="0" coverablelines="6" totallines="20" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="UseCases.GetContentUseCase" coveredlines="13" coverablelines="14" totallines="32" coveredbranches="1" totalbranches="2" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="UseCases.SortingUseCase" coveredlines="14" coverablelines="14" totallines="49" coveredbranches="6" totalbranches="6" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="UseCases.TimeBetweenMultipleSortingUseCase" coveredlines="0" coverablelines="29" totallines="62" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="3" />
+  </assembly>
+</coverage>

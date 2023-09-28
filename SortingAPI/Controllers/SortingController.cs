@@ -27,7 +27,7 @@ namespace SortingAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> SortNumberArray(int[] intArray)
         {
-            return HandleResult(_sortingUseCase.SortingUseCaseByAlgorithm(intArray));
+            return HandleResult(await _sortingUseCase.SortingUseCaseByAlgorithm(intArray));
         }
 
         [HttpGet("latestFile")]

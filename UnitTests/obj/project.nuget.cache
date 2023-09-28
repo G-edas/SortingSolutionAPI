@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bQmhV1P13wzED5Ukv4SbmgfkbnGuUK4o6VYaZcqlaTIiUsOcU+IIqkW4HRXRq/FgXzu98WqRdaFS/654+nBN6w==",
+  "dgSpecHash": "iDXgfw7guJusMSHO24g2EDE11EqVH3J4RzWAlCYAiO+WjSwqM7mYLD5oRyF4oQBPVdbuodUKKoDkYrcYopm9bQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gdambra\\source\\repos\\SortingAPI\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gdambra\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
-    "C:\\Users\\gdambra\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\gdambra\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\gdambra\\.nuget\\packages\\fare\\2.2.0\\fare.2.2.0.nupkg.sha512",
     "C:\\Users\\gdambra\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
     "C:\\Users\\gdambra\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

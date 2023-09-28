@@ -7,12 +7,12 @@ namespace UnitTests;
 public class TestGetContentUseCase
 {
     [SetUp]
-    public void Setup()
+    public async Task Setup()
     {
     }
 
     [Test]
-    public void TestGetContentUseCase_DoesntThrowError()
+    public async Task TestGetContentUseCase_DoesntThrowError()
     {
 
         // Arrange
@@ -23,33 +23,30 @@ public class TestGetContentUseCase
 
         //Mock
         var getContentServiceMock = new Mock<IGetContentService>();
-        getContentServiceMock.Setup(service => service.GetContent(testingFileName)).Returns("This is for unit tests.");
+        getContentServiceMock.Setup(service => service.GetContent()).Returns(Task.FromResult("This is for unit tests."));
 
         var useCase = new GetContentUseCase(getContentServiceMock.Object);
 
         // Act
-        string result = useCase.GetLatestContentUseCase().Result;
+        string result = await useCase.GetLatestContentUseCase();
 
         // Assert
         Assert.AreEqual("This is for unit tests.", result);
 
-        //write me unit tests to get latest file content
-
-
     }
 
     [Test]
-    public void TestGetContentUseCase_ThrowsErrorFileNotFound()
+    public async Task TestGetContentUseCase_ThrowsErrorFileNotFound()
     {
 
         // Arrange
         string testingDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-        string testingFileName = "FileNotFound.txt"; // A file that doesn't exist
+        string testingFileName = "FileNotFound.txt";
         string filePath = Path.Combine(testingDirectory, testingFileName);
 
         // Mock
         var getContentServiceMock = new Mock<IGetContentService>();
-        getContentServiceMock.Setup(service => service.GetContent(It.IsAny<string>())).Throws<FileNotFoundException>();
+        getContentServiceMock.Setup(service => service.GetContent()).Throws<FileNotFoundException>();
 
         var useCase = new GetContentUseCase(getContentServiceMock.Object);
 
@@ -57,4 +54,5 @@ public class TestGetContentUseCase
         Assert.ThrowsAsync<FileNotFoundException>(async () => await useCase.GetLatestContentUseCase());
 
     }
+
 }

@@ -8,6 +8,6 @@ namespace BusinessLayer.Interfaces
 {
     public interface IGetContentService
     {
-        string GetContent(string fileName);
+        Task<string> GetContent();
     }
 }

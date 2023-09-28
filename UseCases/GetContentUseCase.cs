@@ -11,30 +11,18 @@ namespace UseCases
         {
             _getContentService = getContentService;
         }
-        public Task<string> GetLatestContentUseCase()
+        public async Task<string> GetLatestContentUseCase()
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
 
-            DirectoryInfo directoryInfo = new DirectoryInfo(currentDirectory);
+            var result = await _getContentService.GetContent();
 
-            FileInfo[] textFiles = directoryInfo.GetFiles("*.txt");
-
-            FileInfo latestFile = textFiles.OrderByDescending(file => file.LastWriteTime).FirstOrDefault();
-
-            if (latestFile != null)
+            if (result == null)
             {
-                string latestFileName = latestFile.Name;
-
-                if (!File.Exists(latestFileName))
-                {
-                    throw new FileNotFoundException("File not found.");
-                }
-
-                return Task.FromResult(_getContentService.GetContent(latestFileName));
-
+                throw new FileNotFoundException("Latest file was not found");
             }
 
-            throw new FileNotFoundException("Latest file was not found");
+            return result;
+
         }
     }
 }

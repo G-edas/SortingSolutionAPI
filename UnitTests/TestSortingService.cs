@@ -7,12 +7,12 @@ namespace UnitTests;
 public class TestSortingService
 {
     [SetUp]
-    public void Setup()
+    public async Task Setup()
     {
     }
 
     [Test]
-    public void QuickSortNumberAsync_ReturnsSortedArray()
+    public async Task QuickSortNumberAsync_ReturnsSortedArray()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7 };
@@ -34,7 +34,7 @@ public class TestSortingService
     }
 
     [Test]
-    public void BubbleSortNumberAsync_ReturnsSortedArray()
+    public async Task BubbleSortNumberAsync_ReturnsSortedArray()
     {
         // Arrange
         var givenArray = new int[] { 2, 1, 10, 9, 8, 5, 4, 3, 6, 7 };
@@ -48,7 +48,7 @@ public class TestSortingService
                            .Callback(() => sortingServices.BubbleSortNumberAsync(givenArray));
 
         // Act
-        mockBusinessServices.Object.BubbleSortNumberAsync(givenArray);
+        await mockBusinessServices.Object.BubbleSortNumberAsync(givenArray);
 
         // Assert
         CollectionAssert.AreEqual(expectedArray, givenArray);

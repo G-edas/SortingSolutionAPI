@@ -13,7 +13,7 @@ namespace UseCases
             _sortingServices = sortingServices;
             _saveContentService = saveContentService;
         }
-        public int[]? SortingUseCaseByAlgorithm(int[] arrayNums)
+        public async Task<int[]> SortingUseCaseByAlgorithm(int[] arrayNums)
         {
             string fileName = $"sorted_array_{DateTime.Now:yyyyMMddHHmmss}.txt";
 
@@ -22,26 +22,9 @@ namespace UseCases
                 throw new ArgumentException("Input array must contain natural numbers greater than 0 and cannot be empty.");
             }
 
-            var result =  _sortingServices.QuickSortNumberAsync(arrayNums, 0, arrayNums.Length - 1).Result;
+            var result =  await _sortingServices.QuickSortNumberAsync(arrayNums, 0, arrayNums.Length - 1);
 
             _saveContentService.WriterToFile(fileName, result);
-
-            //try
-            //{
-            //    using (StreamWriter writer = File.CreateText(fileName))
-            //    {
-            //        string spaceSeparatedString = string.Join(" ", result);
-
-            //        writer.WriteLine(spaceSeparatedString);
-
-            //    }
-            //}
-
-
-            //catch (IOException ex)
-            //{
-            //    throw new Exception($"Error writing to file: {ex.Message}");
-            //}
 
             return result;
         }

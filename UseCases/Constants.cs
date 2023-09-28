@@ -1,7 +1,7 @@
 ﻿
 namespace UseCases
 {
-    public class Constants
+    static class Constants
     {
         public const int sizeArray = 10000;
     }
