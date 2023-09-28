@@ -10,7 +10,7 @@
                 app.UseSwaggerUI(
                         config =>
                         {
-                            config.SwaggerEndpoint("/swagger/v1/swagger.json", "My Web API v1");
+                            config.SwaggerEndpoint("/swagger/v1/swagger.json", "Sorting API");
                         }
                     );
             }

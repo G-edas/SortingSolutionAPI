@@ -31,7 +31,7 @@ public class TestGetContentUseCase
         string result = await useCase.GetLatestContentUseCase();
 
         // Assert
-        Assert.AreEqual("This is for unit tests.", result);
+        CollectionAssert.AreEqual("This is for unit tests.", result);
 
     }
 

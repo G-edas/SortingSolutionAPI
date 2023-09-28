@@ -36,7 +36,7 @@ public class TestSortingUseCase
         var result = useCase.SortingUseCaseByAlgorithm(givenArray).Result;
 
         // Assert
-        Assert.AreEqual(expectedArray, result);
+        CollectionAssert.AreEqual(expectedArray, result);
 
     }
 
@@ -87,6 +87,7 @@ public class TestSortingUseCase
         var useCase = new SortingUseCase(sortingServiceMock.Object, writerToFileServiceMock.Object);
 
         // Act and Assert
+
         Assert.ThrowsAsync<ArgumentException>(() => useCase.SortingUseCaseByAlgorithm(emptyArray));
 
     }

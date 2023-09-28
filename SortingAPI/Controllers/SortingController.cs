@@ -30,7 +30,7 @@ namespace SortingAPI.Controllers
             return HandleResult(await _sortingUseCase.SortingUseCaseByAlgorithm(intArray));
         }
 
-        [HttpGet("latestFile")]
+        [HttpGet("latestFileContent")]
         public async Task<IActionResult> GetContentOfFile()
         {
             return HandleResult(await _getContentUseCase.GetLatestContentUseCase());

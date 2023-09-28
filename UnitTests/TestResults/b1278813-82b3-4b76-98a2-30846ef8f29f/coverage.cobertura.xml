@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.5806" branch-rate="0.8928" version="1.9" timestamp="1695831761" lines-covered="72" lines-valid="124" branches-covered="25" branches-valid="28">
+<coverage line-rate="0.544" branch-rate="0.8332999999999999" version="1.9" timestamp="1695886788" lines-covered="68" lines-valid="125" branches-covered="25" branches-valid="30">
   <sources>
     <source>C:\Users\gdambra\source\repos\SortingAPI\</source>
   </sources>
   <packages>
-    <package name="BusinessLayer" line-rate="0.7376999999999999" branch-rate="1" complexity="21">
+    <package name="BusinessLayer" line-rate="0.6923" branch-rate="0.9" complexity="22">
       <classes>
         <class name="BusinessLayer.DependencyInjections.BusinessServicesExtensions" filename="BusinessLayer\DependencyInjections\BusinessServicesExtensions.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -28,20 +28,36 @@
             <line number="19" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="BusinessLayer.BusinessServices.GetContentService" filename="BusinessLayer\BusinessServices\GetContentService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="BusinessLayer.BusinessServices.GetContentService" filename="BusinessLayer\BusinessServices\GetContentService.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
-            <method name="GetContent" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="GetContent" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="9" hits="0" branch="False" />
                 <line number="10" hits="0" branch="False" />
                 <line number="11" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="15" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="71" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="9" hits="0" branch="False" />
             <line number="10" hits="0" branch="False" />
             <line number="11" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="15" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="71" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="17" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
           </lines>
         </class>
         <class name="BusinessLayer.BusinessServices.SaveContentService" filename="BusinessLayer\BusinessServices\SaveContentService.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -246,7 +262,7 @@
         </class>
       </classes>
     </package>
-    <package name="UseCases" line-rate="0.4285" branch-rate="0.7" complexity="15">
+    <package name="UseCases" line-rate="0.3833" branch-rate="0.7" complexity="16">
       <classes>
         <class name="BusinessLayer.DependencyInjections.UseCasesExtensions" filename="UseCases\DependencyInjections\UseCasesExtensions.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -270,26 +286,8 @@
             <line number="19" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="UseCases.GetContentUseCase" filename="UseCases\GetContentUseCase.cs" line-rate="0.9285" branch-rate="0.5" complexity="3">
+        <class name="UseCases.GetContentUseCase" filename="UseCases\GetContentUseCase.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="GetLatestContentUseCase" signature="()" line-rate="0.9" branch-rate="0.5" complexity="2">
-              <lines>
-                <line number="15" hits="2" branch="False" />
-                <line number="16" hits="2" branch="False" />
-                <line number="18" hits="2" branch="False" />
-                <line number="20" hits="2" branch="False" />
-                <line number="22" hits="88" branch="False" />
-                <line number="24" hits="2" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="77" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="25" hits="2" branch="False" />
-                <line number="26" hits="2" branch="False" />
-                <line number="29" hits="0" branch="False" />
-                <line number="30" hits="1" branch="False" />
-              </lines>
-            </method>
             <method name=".ctor" signature="(BusinessLayer.Interfaces.IGetContentService)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="10" hits="2" branch="False" />
@@ -300,47 +298,46 @@
             </method>
           </methods>
           <lines>
-            <line number="15" hits="2" branch="False" />
-            <line number="16" hits="2" branch="False" />
-            <line number="18" hits="2" branch="False" />
-            <line number="20" hits="2" branch="False" />
-            <line number="22" hits="88" branch="False" />
-            <line number="24" hits="2" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="77" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="25" hits="2" branch="False" />
-            <line number="26" hits="2" branch="False" />
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="1" branch="False" />
             <line number="10" hits="2" branch="False" />
             <line number="11" hits="2" branch="False" />
             <line number="12" hits="2" branch="False" />
             <line number="13" hits="2" branch="False" />
           </lines>
         </class>
-        <class name="UseCases.SortingUseCase" filename="UseCases\SortingUseCase.cs" line-rate="1" branch-rate="1" complexity="7">
+        <class name="UseCases.GetContentUseCase/&lt;GetLatestContentUseCase&gt;d__2" filename="UseCases\GetContentUseCase.cs" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
           <methods>
-            <method name="SortingUseCaseByAlgorithm" signature="(System.Int32[])" line-rate="1" branch-rate="1" complexity="6">
+            <method name="MoveNext" signature="()" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="17" hits="5" branch="False" />
-                <line number="18" hits="5" branch="False" />
-                <line number="20" hits="26" branch="True" condition-coverage="100% (6/6)">
+                <line number="15" hits="2" branch="False" />
+                <line number="17" hits="2" branch="False" />
+                <line number="19" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
-                    <condition number="64" type="jump" coverage="100%" />
-                    <condition number="103" type="jump" coverage="100%" />
-                    <condition number="115" type="jump" coverage="100%" />
+                    <condition number="158" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="21" hits="3" branch="False" />
-                <line number="22" hits="3" branch="False" />
-                <line number="25" hits="2" branch="False" />
-                <line number="27" hits="2" branch="False" />
-                <line number="46" hits="2" branch="False" />
-                <line number="47" hits="2" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
               </lines>
             </method>
+          </methods>
+          <lines>
+            <line number="15" hits="2" branch="False" />
+            <line number="17" hits="2" branch="False" />
+            <line number="19" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="158" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="UseCases.SortingUseCase" filename="UseCases\SortingUseCase.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
             <method name=".ctor" signature="(BusinessLayer.Interfaces.ISortingServices,BusinessLayer.Interfaces.ISaveContentService)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="11" hits="5" branch="False" />
@@ -352,26 +349,49 @@
             </method>
           </methods>
           <lines>
-            <line number="17" hits="5" branch="False" />
-            <line number="18" hits="5" branch="False" />
-            <line number="20" hits="26" branch="True" condition-coverage="100% (6/6)">
-              <conditions>
-                <condition number="64" type="jump" coverage="100%" />
-                <condition number="103" type="jump" coverage="100%" />
-                <condition number="115" type="jump" coverage="100%" />
-              </conditions>
-            </line>
-            <line number="21" hits="3" branch="False" />
-            <line number="22" hits="3" branch="False" />
-            <line number="25" hits="2" branch="False" />
-            <line number="27" hits="2" branch="False" />
-            <line number="46" hits="2" branch="False" />
-            <line number="47" hits="2" branch="False" />
             <line number="11" hits="5" branch="False" />
             <line number="12" hits="5" branch="False" />
             <line number="13" hits="5" branch="False" />
             <line number="14" hits="5" branch="False" />
             <line number="15" hits="5" branch="False" />
+          </lines>
+        </class>
+        <class name="UseCases.SortingUseCase/&lt;&gt;c" filename="UseCases\SortingUseCase.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="&lt;SortingUseCaseByAlgorithm&gt;b__3_0" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="26" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="26" branch="False" />
+          </lines>
+        </class>
+        <class name="UseCases.SortingUseCase/&lt;SortingUseCaseByAlgorithm&gt;d__3" filename="UseCases\SortingUseCase.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="17" hits="5" branch="False" />
+                <line number="18" hits="5" branch="False" />
+                <line number="21" hits="3" branch="False" />
+                <line number="22" hits="3" branch="False" />
+                <line number="25" hits="2" branch="False" />
+                <line number="27" hits="2" branch="False" />
+                <line number="29" hits="2" branch="False" />
+                <line number="30" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="5" branch="False" />
+            <line number="18" hits="5" branch="False" />
+            <line number="21" hits="3" branch="False" />
+            <line number="22" hits="3" branch="False" />
+            <line number="25" hits="2" branch="False" />
+            <line number="27" hits="2" branch="False" />
+            <line number="29" hits="2" branch="False" />
+            <line number="30" hits="2" branch="False" />
           </lines>
         </class>
         <class name="UseCases.TimeBetweenMultipleSortingUseCase" filename="UseCases\TimeBetweenMultipleSortingUseCase.cs" line-rate="0" branch-rate="0" complexity="4">
