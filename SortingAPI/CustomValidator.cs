@@ -19,7 +19,7 @@ public class CustomValidator : ValidationAttribute
             {
                 if (intValue < _minValue || intValue > _maxValue)
                 {
-                    return new ValidationResult($"The value {intValue} is above the value of between {_minValue} and {_maxValue}.");
+                    return new ValidationResult($"The value {intValue} is not between {_minValue} and {_maxValue}.");
                 }
             }
 
