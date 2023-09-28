@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SortingAPI.Controllers.Base;
-using System.ComponentModel.DataAnnotations;
 using UseCases.Interfaces;
 
 namespace SortingAPI.Controllers
